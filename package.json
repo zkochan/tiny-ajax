@@ -1,0 +1,32 @@
+{
+  "name": "tiny-ajax",
+  "version": "0.0.0",
+  "description": "A tiny XMLHttpRequest wrapper.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zkochan/tiny-ajax.git"
+  },
+  "keywords": [
+    "ajax",
+    "request",
+    "xml-http-request",
+    "http-request"
+  ],
+  "author": {
+    "name": "Zoltan Kochan",
+    "email": "zoltan.kochan@gmail.com",
+    "url": "http://kochan.io"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zkochan/tiny-ajax/issues"
+  },
+  "homepage": "https://github.com/zkochan/tiny-ajax#readme",
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org"
+  },
+  "dependencies": {
+    "jquery-param": "0.2.0"
+  }
+}
