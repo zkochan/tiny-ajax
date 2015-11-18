@@ -2,6 +2,7 @@
 
 var param = require('jquery-param');
 var STATE_DONE = 4;
+var CONTENT_TYPE = 'Content-type';
 
 var ajax = {};
 
@@ -23,7 +24,14 @@ ajax.send = function(url, opts) {
     opts.error(x.responseText);
   };
   if (opts.method === 'POST') {
-    x.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    x.setRequestHeader(CONTENT_TYPE, 'application/x-www-form-urlencoded');
+  }
+  if (opts.contentType) {
+    x.setRequestHeader(CONTENT_TYPE, opts.contentType);
+  }
+  x.setRequestHeader('Accept', '*/*');
+  if (opts.mimeType && x.overrideMimeType) {
+    x.overrideMimeType(opts.mimeType);
   }
   x.send(opts.data);
 };
