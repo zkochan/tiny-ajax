@@ -3,6 +3,7 @@
 var param = require('jquery-param');
 var STATE_DONE = 4;
 var CONTENT_TYPE = 'Content-type';
+var noop = function() {};
 
 var ajax = {};
 
@@ -11,6 +12,10 @@ ajax.x = function() {
 };
 
 ajax.send = function(url, opts) {
+  opts = opts || {};
+  opts.success = opts.success || noop;
+  opts.error = opts.error || noop;
+
   var x = ajax.x();
   x.open(opts.method, url);
   x.onreadystatechange = function() {
